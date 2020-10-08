@@ -3,9 +3,11 @@ package redis
 import (
 	"context"
 	"errors"
-	"github.com/go-redis/redis/v8"
 	"strconv"
 	"strings"
+
+	"github.com/go-redis/redis/v8"
+
 	"wait4it/model"
 )
 

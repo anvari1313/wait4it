@@ -3,7 +3,9 @@ package postgres
 import (
 	"database/sql"
 	"errors"
+
 	_ "github.com/lib/pq"
+
 	"wait4it/model"
 )
 

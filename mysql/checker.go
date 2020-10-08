@@ -3,10 +3,11 @@ package mysql
 import (
 	"database/sql"
 	"errors"
-	"github.com/go-sql-driver/mysql"
-	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"log"
+
+	"github.com/go-sql-driver/mysql"
+
 	"wait4it/model"
 )
 
