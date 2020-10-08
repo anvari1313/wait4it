@@ -20,16 +20,16 @@ func (pq *PostgresSQLConnection) BuildContext(cx model.CheckContext) {
 	}
 }
 
-func (pq *PostgresSQLConnection) Validate() (bool, error) {
+func (pq *PostgresSQLConnection) Validate() error {
 	if len(pq.Host) == 0 || len(pq.Username) == 0 {
-		return false, errors.New("host or username can't be empty")
+		return errors.New("host or username can't be empty")
 	}
 
 	if pq.Port < 0 || pq.Port > 65535 {
-		return false, errors.New("invalid port range for mysql")
+		return errors.New("invalid port range for mysql")
 	}
 
-	return true, nil
+	return nil
 }
 
 func (pq *PostgresSQLConnection) Check() (bool, bool, error) {

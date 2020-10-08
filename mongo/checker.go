@@ -17,20 +17,20 @@ func (m *MongoDbConnection) BuildContext(cx model.CheckContext) {
 	m.Password = cx.Password
 }
 
-func (m *MongoDbConnection) Validate() (bool, error) {
+func (m *MongoDbConnection) Validate() error {
 	if len(m.Host) == 0 {
-		return false, errors.New("host can't be empty")
+		return errors.New("host can't be empty")
 	}
 
 	if len(m.Username) > 0 && len(m.Password) == 0 {
-		return false, errors.New("password can't be empty")
+		return errors.New("password can't be empty")
 	}
 
 	if m.Port < 0 || m.Port > 65535 {
-		return false, errors.New("invalid port range for mysql")
+		return errors.New("invalid port range for mysql")
 	}
 
-	return true, nil
+	return nil
 }
 
 func (m *MongoDbConnection) Check() (bool, bool, error) {
