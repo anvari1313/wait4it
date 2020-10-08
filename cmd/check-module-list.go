@@ -1,19 +1,20 @@
 package cmd
 
 import (
-	"wait4it/MongoDbChecker"
-	"wait4it/MySQLChecker"
-	"wait4it/PostgreSQLChecker"
-	"wait4it/RedisChecker"
-	"wait4it/TcpChecker"
-	"wait4it/httpChecker"
+	"wait4it/http"
+	"wait4it/model"
+	"wait4it/mongo"
+	"wait4it/mysql"
+	"wait4it/postgres"
+	"wait4it/redis"
+	"wait4it/tcp"
 )
 
-var cm = map[string]interface{}{
-	"tcp":      &TcpChecker.Tcp{},
-	"mysql":    &MySQLChecker.MySQLConnection{},
-	"postgres": &PostgreSQLChecker.PostgresSQLConnection{},
-	"http":     &httpChecker.HttpCheck{},
-	"mongo":    &MongoDbChecker.MongoDbConnection{},
-	"redis":    &RedisChecker.RedisConnection{},
+var cm = map[string]model.Checker{
+	"tcp":      &tcp.Tcp{},
+	"mysql":    &mysql.MySQLConnection{},
+	"postgres": &postgres.PostgresSQLConnection{},
+	"http":     &http.HttpCheck{},
+	"mongo":    &mongo.MongoDbConnection{},
+	"redis":    &redis.RedisConnection{},
 }

@@ -1,4 +1,4 @@
-package MySQLChecker
+package mysql
 
 import (
 	"database/sql"

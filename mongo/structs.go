@@ -1,4 +1,4 @@
-package MongoDbChecker
+package mongo
 
 type MongoDbConnection struct {
 	Host     string

@@ -1,9 +1,10 @@
-package MySQLChecker
+package postgres
 
-type MySQLConnection struct {
+type PostgresSQLConnection struct {
 	Host         string
 	Port         int
 	Username     string
 	Password     string
 	DatabaseName string
+	SSLMode      string
 }

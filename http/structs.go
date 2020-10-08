@@ -1,4 +1,4 @@
-package httpChecker
+package http
 
 type HttpCheck struct {
 	Url    string

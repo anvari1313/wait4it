@@ -1,4 +1,4 @@
-package flagParser
+package flag
 
 import (
 	"flag"

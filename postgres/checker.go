@@ -1,4 +1,4 @@
-package PostgreSQLChecker
+package postgres
 
 import (
 	"database/sql"

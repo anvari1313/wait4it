@@ -15,7 +15,7 @@ func RunCheck(c model.CheckContext) {
 		os.Exit(2)
 	}
 
-	cx := m.(model.CheckInterface)
+	cx := m.(model.Checker)
 
 	cx.BuildContext(c)
 	r, err := cx.Validate()
@@ -47,7 +47,7 @@ func findCheckModule(ct string) (interface{}, error) {
 	return m, nil
 }
 
-func ticker(cs model.CheckInterface, t *time.Ticker, d chan bool) {
+func ticker(cs model.Checker, t *time.Ticker, d chan bool) {
 	for {
 		select {
 		case <-d:
@@ -58,7 +58,7 @@ func ticker(cs model.CheckInterface, t *time.Ticker, d chan bool) {
 	}
 }
 
-func check(cs model.CheckInterface) {
+func check(cs model.Checker) {
 	r, eor, err := cs.Check()
 	if err != nil && eor {
 		wStdErr(err.Error())

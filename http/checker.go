@@ -1,4 +1,4 @@
-package httpChecker
+package http
 
 import (
 	"errors"

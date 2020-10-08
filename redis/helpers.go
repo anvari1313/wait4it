@@ -1,4 +1,4 @@
-package RedisChecker
+package redis
 
 import (
 	"strconv"
