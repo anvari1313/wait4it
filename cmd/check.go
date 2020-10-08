@@ -19,8 +19,8 @@ func RunCheck(c model.CheckContext) {
 	cx := m.(model.Checker)
 
 	cx.BuildContext(c)
-	r, err := cx.Validate()
-	if !r {
+	err = cx.Validate()
+	if err != nil {
 		wStdErr(err)
 		os.Exit(2)
 	}
